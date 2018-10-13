@@ -1,0 +1,50 @@
+plugins {
+    id "java"
+    id "java-gradle-plugin"
+    id "maven-publish"
+    id "com.gradle.plugin-publish" version "0.10.0"
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.10.2"
+}
+
+sourceCompatibility = "1.8"
+
+group "ud.susel"
+version "0.1.0-SNAPSHOT"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.github.javaparser:javaparser-symbol-solver-core:3.6.25"
+}
+
+gradlePlugin {
+    plugins {
+        suselPlugin {
+            id = "ud.susel.susel-gradle-plugin"
+            implementationClass = "ud.susel.tool.plugin.SuselPlugin"
+            displayName = "A gradle plugin to run the Susel tool to generate metadata about service providers"
+            description = "This gradle plugin creates the META-INF/susel.metadata file representing the metadata about the service providers in a given Java module (in the JPMS sense)."
+        }
+    }
+}
+
+pluginBundle {
+    website = "https://github.com/udaychandra/susel-gradle-plugin"
+    vcsUrl = "https://github.com/udaychandra/susel-gradle-plugin"
+    tags = ["Susel", "JPMS", "Java11", "Jigsaw", "JDK11"]
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}

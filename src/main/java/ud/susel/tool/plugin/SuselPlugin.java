@@ -50,7 +50,7 @@ public class SuselPlugin implements Plugin<Project> {
                 .setDescription("Process and create metadata for all service providers.");
 
         config.defaultDependencies(dependencies ->
-                dependencies.add(project.getDependencies().create("ud.susel:tool:0.1.0-SNAPSHOT")));
+                dependencies.add(project.getDependencies().create("io.github.udaychandra:tool:0.1.0")));
 
         return config;
     }

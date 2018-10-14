@@ -13,7 +13,7 @@ The metadata is later used by Susel during runtime to load and cache service pro
 Apply the Susel plugin to your build script.
 ```groovy
 plugins {
-    id 'ud.susel.susel-gradle-plugin' version '0.1.0'
+    id 'io.github.udaychandra.susel' version '0.1.2'
 }
 ```
 

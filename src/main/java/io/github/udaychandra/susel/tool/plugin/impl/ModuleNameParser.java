@@ -1,4 +1,4 @@
-package ud.susel.tool.plugin.impl;
+package io.github.udaychandra.susel.tool.plugin.impl;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;

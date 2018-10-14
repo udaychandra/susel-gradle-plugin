@@ -1,7 +1,7 @@
 ## Susel Metadata Gradle Plugin
 A gradle plugin to run the [Susel](https://github.com/udaychandra/susel) tool.
 
-This gradle plugin creates the META-INF/susel.metadata file representing the metadata about the service providers in a given Java module (in the JPMS sense).
+This gradle plugin creates the META-INF/susel.metadata file representing the metadata about the service providers in a given Java module.
 The metadata is later used by Susel during runtime to load and cache service providers used by an application.
 
 #### Basic Usage 

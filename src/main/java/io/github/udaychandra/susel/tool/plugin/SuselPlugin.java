@@ -1,4 +1,4 @@
-package ud.susel.tool.plugin;
+package io.github.udaychandra.susel.tool.plugin;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
@@ -11,8 +11,8 @@ import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.bundling.Jar;
 import org.gradle.api.tasks.compile.JavaCompile;
-import ud.susel.tool.plugin.impl.ModuleNameParser;
-import ud.susel.tool.plugin.impl.SuselMetadataTask;
+import io.github.udaychandra.susel.tool.plugin.impl.ModuleNameParser;
+import io.github.udaychandra.susel.tool.plugin.impl.SuselMetadataTask;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class SuselPlugin implements Plugin<Project> {
                 .setDescription("Process and create metadata for all service providers.");
 
         config.defaultDependencies(dependencies ->
-                dependencies.add(project.getDependencies().create("io.github.udaychandra:tool:0.1.0")));
+                dependencies.add(project.getDependencies().create("io.github.udaychandra.susel:tool:0.1.2")));
 
         return config;
     }
@@ -72,7 +72,7 @@ public class SuselPlugin implements Plugin<Project> {
 
         metadataTask.doFirst(action -> {
             metadataTask.classpath(config);
-            metadataTask.setMain("ud.susel.tool.Launcher");
+            metadataTask.setMain("io.github.udaychandra.susel.tool.Launcher");
 
             List<String> args = new ArrayList<>();
             args.add("--module-path");
@@ -80,7 +80,7 @@ public class SuselPlugin implements Plugin<Project> {
             args.add("--add-modules");
             args.add(moduleName);
             args.add("--module");
-            args.add("ud.susel.tool/" + metadataTask.getMain());
+            args.add("io.github.udaychandra.susel.tool/" + metadataTask.getMain());
             args.add("--module-name");
             args.add(moduleName);
             args.add("--meta-inf-root-path");

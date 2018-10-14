@@ -1,9 +1,9 @@
-package ud.susel.tool.plugin.impl;
+package io.github.udaychandra.susel.tool.plugin.impl;
 
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.JavaExec;
-import ud.susel.tool.plugin.SuselPlugin;
+import io.github.udaychandra.susel.tool.plugin.SuselPlugin;
 
 /**
  * Runs the Susel tool to generate metadata on the module's service providers.

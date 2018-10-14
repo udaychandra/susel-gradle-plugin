@@ -12,8 +12,8 @@ task wrapper(type: Wrapper) {
 
 sourceCompatibility = "1.8"
 
-group "ud.susel"
-version "0.1.0"
+group "io.github.udaychandra.susel"
+version "0.1.2"
 
 repositories {
     mavenLocal()
@@ -27,10 +27,10 @@ dependencies {
 gradlePlugin {
     plugins {
         suselPlugin {
-            id = "ud.susel.susel-gradle-plugin"
-            implementationClass = "ud.susel.tool.plugin.SuselPlugin"
+            id = "io.github.udaychandra.susel"
+            implementationClass = "io.github.udaychandra.susel.tool.plugin.SuselPlugin"
             displayName = "A gradle plugin to run the Susel tool to generate metadata about service providers"
-            description = "This gradle plugin creates the META-INF/susel.metadata file representing the metadata about the service providers in a given Java module (in the JPMS sense)."
+            description = "This gradle plugin creates the META-INF/susel.metadata file representing the metadata about the service providers in a given Java module."
         }
     }
 }
